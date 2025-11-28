@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Dev - Leviton Lima Carvalho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Importando JetBrains Mono (Fonte de código) e Inter */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            color: #333;
+        }
+        
+        /* Títulos com fonte de código */
+        h1, h2, h3, h4, .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Cores inspiradas no tema Dark do VS Code / Dracula */
+        .sidebar {
+            background-color: #1e1e1e; /* VS Code Dark bg */
+            color: #d4d4d4;
+            border-right: 4px solid #007acc; /* VS Code Blue border */
+        }
+
+        .accent-text {
+            color: #007acc;
+        }
+
+        .sidebar-title {
+            color: #569cd6; /* VS Code Blue keyword color */
+        }
+
+        .sidebar-accent {
+            color: #4ec9b0; /* VS Code Teal type color */
+        }
+        
+        .sidebar-string {
+            color: #ce9178; /* VS Code Orange string color */
+        }
+
+        /* Efeito de terminal na sidebar */
+        .terminal-cursor::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Utilitário para quebra de página na impressão */
+        .page-break {
+            page-break-before: always;
+            margin-top: 3rem;
+            display: block;
+            height: 1px;
+        }
+
+        /* Evita que cards sejam cortados na impressão */
+        .avoid-break {
+            break-inside: avoid;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .container-cv {
+                box-shadow: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                display: block !important;
+            }
+            
+            .print-col-layout {
+                display: flex !important;
+                flex-direction: row !important;
+                min-height: 100vh;
+            }
+            
+            .sidebar {
+                min-height: 100%;
+                background-color: #1e1e1e !important; /* Força cor escura na impressão */
+                -webkit-print-color-adjust: exact; 
+            }
+            
+            /* Ajustes para garantir que cabe em 2 páginas A4 */
+            h2 { margin-top: 0; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+
+    <!-- Resume Container -->
+    <div class="container-cv max-w-5xl mx-auto bg-white shadow-2xl overflow-hidden flex flex-col md:flex-row print-col-layout">
+        
+        <!-- Sidebar (Left Column - IDE Style) -->
+        <aside class="sidebar w-full md:w-1/3 p-8 flex flex-col gap-8">
+            
+            <!-- Header/Name -->
+            <div class="text-center md:text-left">
+                <!-- Avatar Code Style -->
+                <div class="w-32 h-32 mx-auto md:mx-0 bg-gray-800 rounded-full flex items-center justify-center text-blue-400 text-4xl font-bold mb-6 shadow-lg border-2 border-blue-500 relative overflow-hidden group">
+                    <span class="z-10">&lt;/&gt;</span>
+                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                </div>
+                
+                <div class="font-mono text-xs text-gray-500 mb-1">class <span class="text-yellow-400">Developer</span> {</div>
+                <h1 class="text-3xl font-bold leading-tight text-white mb-1">Leviton<br>Carvalho</h1>
+                <p class="text-blue-400 font-mono text-sm mb-1">Full_Stack_Developer</p>
+                <div class="font-mono text-xs text-gray-500">}</div>
+            </div>
+
+            <!-- Contact -->
+            <div class="font-mono text-sm">
+                <h3 class="text-lg font-bold border-b border-gray-700 pb-2 mb-4 uppercase tracking-wider sidebar-title">
+                    <span class="text-gray-500">//</span> Contato
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 group">
+                        <i class="fas fa-map-marker-alt mt-1 sidebar-accent"></i>
+                        <span class="sidebar-string">"Camacan, BA"</span>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <i class="fas fa-phone sidebar-accent"></i>
+                        <span class="sidebar-string">"+351 930 662 282"</span>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <i class="fas fa-envelope sidebar-accent"></i>
+                        <a href="mailto:levitoncarvalho@icloud.com" class="hover:text-white transition text-xs break-all text-blue-300">levitoncarvalho@icloud.com</a>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <i class="fab fa-linkedin sidebar-accent"></i>
+                        <a href="https://linkedin.com/in/levitoncarvalho" target="_blank" class="hover:text-white transition text-xs text-blue-300">/in/levitoncarvalho</a>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <i class="fab fa-github sidebar-accent"></i>
+                        <a href="https://github.com/carvalholevis" target="_blank" class="hover:text-white transition text-xs text-blue-300">@carvalholevis</a>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <i class="fas fa-globe sidebar-accent"></i>
+                        <a href="https://carvalholevis.github.io/personal-website" target="_blank" class="hover:text-white transition text-xs text-blue-300">portfolio.url</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <h3 class="text-lg font-bold border-b border-gray-700 pb-2 mb-4 uppercase tracking-wider sidebar-title font-mono">
+                    <span class="text-gray-500">//</span> Stack.json
+                </h3>
+                
+                <div class="mb-5">
+                    <p class="text-xs text-gray-400 mb-2 font-mono">"frontend": [</p>
+                    <div class="flex flex-wrap gap-2 pl-4 border-l border-gray-700">
+                        <span class="text-xs text-yellow-200">"JavaScript"</span>,
+                        <span class="text-xs text-blue-300">"TypeScript"</span>,
+                        <span class="text-xs text-cyan-300">"React"</span>,
+                        <span class="text-xs text-red-400">"Angular"</span>,
+                        <span class="text-xs text-green-300">"Vue"</span>,
+                        <span class="text-xs text-teal-300">"Tailwind"</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1 font-mono">],</p>
+                </div>
+
+                <div class="mb-5">
+                    <p class="text-xs text-gray-400 mb-2 font-mono">"backend": [</p>
+                    <div class="flex flex-wrap gap-2 pl-4 border-l border-gray-700">
+                        <span class="text-xs text-orange-400">"Java/Spring"</span>,
+                        <span class="text-xs text-purple-400">"C#/.NET"</span>,
+                        <span class="text-xs text-blue-400">"Python"</span>,
+                        <span class="text-xs text-green-500">"Node.js"</span>,
+                        <span class="text-xs text-yellow-400">"SQL/NoSQL"</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1 font-mono">],</p>
+                </div>
+
+                <div>
+                    <p class="text-xs text-gray-400 mb-2 font-mono">"devOps": [</p>
+                    <div class="flex flex-wrap gap-2 pl-4 border-l border-gray-700">
+                        <span class="text-xs text-blue-400">"Docker"</span>,
+                        <span class="text-xs text-orange-300">"AWS"</span>,
+                        <span class="text-xs text-white">"Git"</span>,
+                        <span class="text-xs text-pink-400">"Scrum"</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1 font-mono">]</p>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div>
+                <h3 class="text-lg font-bold border-b border-gray-700 pb-2 mb-4 uppercase tracking-wider sidebar-title font-mono">
+                    <span class="text-gray-500">//</span> Soft_Skills
+                </h3>
+                <ul class="space-y-2 text-sm font-mono text-green-100">
+                    <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Liderança</li>
+                    <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Resolução_de_Problemas</li>
+                    <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Gestão_de_Tempo</li>
+                    <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Comunicação</li>
+                    <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Adaptabilidade</li>
+                </ul>
+            </div>
+
+            <!-- Languages -->
+            <div>
+                <h3 class="text-lg font-bold border-b border-gray-700 pb-2 mb-4 uppercase tracking-wider sidebar-title font-mono">
+                    <span class="text-gray-500">//</span> Idiomas
+                </h3>
+                <ul class="space-y-3 text-sm font-mono">
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Português</span>
+                            <span class="text-green-400 text-xs">"Nativo"</span>
+                        </div>
+                        <div class="w-full bg-gray-700 h-1 rounded-full"><div class="bg-blue-500 h-1 rounded-full" style="width: 100%"></div></div>
+                    </li>
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Inglês</span>
+                            <span class="text-green-400 text-xs">"Fluente"</span>
+                        </div>
+                        <div class="w-full bg-gray-700 h-1 rounded-full"><div class="bg-blue-500 h-1 rounded-full" style="width: 90%"></div></div>
+                    </li>
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Espanhol</span>
+                            <span class="text-yellow-400 text-xs">"Intermediário"</span>
+                        </div>
+                        <div class="w-full bg-gray-700 h-1 rounded-full"><div class="bg-blue-500 h-1 rounded-full" style="width: 50%"></div></div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content (Right Column - Clean Doc Style) -->
+        <main class="w-full md:w-2/3 p-8 md:p-12 text-gray-800 bg-white relative">
+            
+            <!-- Watermark optional -->
+            <div class="absolute top-10 right-10 text-9xl text-gray-50 opacity-10 font-mono pointer-events-none font-bold select-none">{ }</div>
+
+            <!-- About -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold accent-text border-b-2 border-gray-100 pb-2 mb-6 flex items-center gap-3">
+                    <span class="text-blue-600">&lt;Sobre /&gt;</span>
+                </h2>
+                <div class="text-gray-700 leading-relaxed text-justify space-y-4 font-light">
+                    <p>
+                        Sou um <strong class="font-semibold text-gray-900">Desenvolvedor Full Stack</strong> apaixonado por inovação tecnológica e resolução de problemas complexos. Minha trajetória profissional é marcada por uma transição estratégica da gestão operacional para a engenharia de software, o que me confere uma visão única: a capacidade de alinhar excelência técnica com objetivos de negócio.
+                    </p>
+                    <p>
+                        Com sólida experiência em liderança e otimização de processos, trago para o desenvolvimento de software uma mentalidade orientada a resultados, organização e metodologias ágeis. Sou autodidata por natureza, tendo construído uma base robusta em tecnologias modernas (como <code class="bg-gray-100 px-1 rounded text-sm text-blue-600 font-mono">React</code>, <code class="bg-gray-100 px-1 rounded text-sm text-orange-600 font-mono">Java Spring</code> e <code class="bg-gray-100 px-1 rounded text-sm text-purple-600 font-mono">Cloud</code>) antes mesmo de iniciar minha formação acadêmica formal.
+                    </p>
+                    <p>
+                        Atualmente, busco oportunidades desafiadoras onde eu possa aplicar meu conhecimento em desenvolvimento web e mobile para criar soluções escaláveis, intuitivas e que gerem impacto real para os usuários e para a organização.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold accent-text border-b-2 border-gray-100 pb-2 mb-6 flex items-center gap-3">
+                    <span class="text-blue-600">function</span> <span class="text-yellow-600">experiencia_profissional</span><span class="text-gray-400">()</span>
+                </h2>
+                
+                <div class="mb-8 relative pl-6 border-l-2 border-gray-200 hover:border-blue-400 transition-colors duration-300">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-blue-500 shadow"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-baseline mb-1">
+                        <h3 class="text-xl font-bold text-gray-800">AI Trainer & Revisor de Código</h3>
+                        <span class="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded border border-blue-100 font-mono">Jun 2024 - Jun 2025</span>
+                    </div>
+                    <p class="text-gray-500 font-semibold mb-3 flex items-center gap-2 text-sm"><i class="fas fa-terminal text-xs"></i> Outlier AI - Remoto</p>
+                    
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+                        <ul class="list-none text-gray-600 space-y-2 text-sm font-mono">
+                            <li class="flex gap-2"><span class="text-blue-500">></span> Treinamento e fine-tuning de LLMs com RLHF.</li>
+                            <li class="flex gap-2"><span class="text-blue-500">></span> Code Review de scripts Python e Java gerados por IA.</li>
+                            <li class="flex gap-2"><span class="text-blue-500">></span> Desenvolvimento de testes unitários para validação.</li>
+                            <li class="flex gap-2"><span class="text-blue-500">></span> Refinamento de datasets técnicos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-8 relative pl-6 border-l-2 border-gray-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-gray-400 shadow"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-baseline mb-1">
+                        <h3 class="text-xl font-bold text-gray-800">Auxiliar Administrativo & Suporte TI</h3>
+                        <span class="text-xs font-bold text-gray-600 bg-gray-100 px-3 py-1 rounded border border-gray-200 font-mono">Jan 2022 - Dez 2023</span>
+                    </div>
+                    <p class="text-gray-500 font-semibold mb-3 flex items-center gap-2 text-sm"><i class="fas fa-building text-xs"></i> Casa Design - Itabuna, BA</p>
+                    <ul class="list-disc ml-5 text-gray-600 space-y-1 text-sm">
+                        <li>Automação de planilhas e controle de estoque.</li>
+                        <li>Suporte técnico N1 para hardware e software.</li>
+                        <li>Otimização de fluxo documental (Redução de 40% no tempo de busca).</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-6 border-l-2 border-gray-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-gray-400 shadow"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-baseline mb-1">
+                        <h3 class="text-xl font-bold text-gray-800">Gerente Operacional</h3>
+                        <span class="text-xs font-bold text-gray-600 bg-gray-100 px-3 py-1 rounded border border-gray-200 font-mono">Jan 2018 - Dez 2021</span>
+                    </div>
+                    <p class="text-gray-500 font-semibold mb-3 flex items-center gap-2 text-sm"><i class="fas fa-industry text-xs"></i> LCC - Camacan, BA</p>
+                    <ul class="list-disc ml-5 text-gray-600 space-y-1 text-sm">
+                        <li>Gestão de Supply Chain e Logística.</li>
+                        <li>Implementação de metodologia Lean (15% de redução de custos).</li>
+                        <li>Análise de dados para decisões estratégicas.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Page Break for Printing -->
+            <div class="page-break"></div>
+
+            <!-- Education -->
+            <section class="mb-10 pt-4">
+                <h2 class="text-2xl font-bold accent-text border-b-2 border-gray-100 pb-2 mb-6 flex items-center gap-3">
+                    <span class="text-blue-600">class</span> <span class="text-yellow-600">Formacao_Academica</span>
+                </h2>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-yellow-500 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 font-mono">Engenharia de Software.Bachelor</h3>
+                            <p class="text-gray-600 font-bold text-sm">Descomplica Faculdade Digital</p>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded font-mono border border-yellow-200">Cursando (2026)</span>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed border-t border-gray-200 pt-3 mt-2">
+                        Foco em metodologias ativas, projetos práticos e desenvolvimento de software robusto.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-2 uppercase font-mono tracking-wide text-blue-600">Core_Modules:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1 list-none font-mono text-xs">
+                                <li>> Estruturas de Dados</li>
+                                <li>> Arquitetura de Software</li>
+                                <li>> Engenharia de Requisitos</li>
+                                <li>> Segurança da Informação</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-2 uppercase font-mono tracking-wide text-blue-600">Focus:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1 list-none font-mono text-xs">
+                                <li>> Desenvolvimento Ágil (Scrum)</li>
+                                <li>> Projetos Integradores</li>
+                                <li>> Full Stack Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section>
+                <h2 class="text-2xl font-bold accent-text border-b-2 border-gray-100 pb-2 mb-6 flex items-center gap-3">
+                    <span class="text-gray-400">import</span> <span class="text-blue-600">{ Certificacoes }</span> <span class="text-gray-400">from</span> <span class="text-green-600">'education'</span>
+                </h2>
+                
+                <div class="flex flex-col gap-3">
+                    
+                    <!-- Highlighted Cert -->
+                    <div class="flex items-center gap-4 bg-blue-50 p-4 rounded border border-blue-100 avoid-break">
+                        <div class="bg-white p-2 rounded text-blue-600 border border-blue-200 shadow-sm">
+                            <i class="fas fa-network-wired fa-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-blue-900 text-base font-mono">Global_Network</h4>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded font-mono">2025</span>
+                            </div>
+                            <p class="text-sm text-blue-700">Descomplica Faculdade Digital</p>
+                            <p class="text-xs text-blue-500 mt-1 font-mono">Protocolos TCP/IP, Infraestrutura, Segurança de Redes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Grid Layout for other certs - FULL LIST -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        
+                         <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Mobile Developer</h4>
+                                <span class="text-xs text-gray-400">2025</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Smart Data Structure</h4>
+                                <span class="text-xs text-gray-400">2025</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">AI Trainer - ML</h4>
+                                <span class="text-xs text-gray-400">2025</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Udemy</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Full-Stack Bootcamp</h4>
+                                <span class="text-xs text-gray-400">2025</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Udemy</p>
+                        </div>
+                         
+                         <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Local Area Network</h4>
+                                <span class="text-xs text-gray-400">2025</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <!-- Cursos de 2024 Expandidos -->
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Programming Basics</h4>
+                                <span class="text-xs text-gray-400">2024</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">User Experience (UX)</h4>
+                                <span class="text-xs text-gray-400">2024</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Database Developer</h4>
+                                <span class="text-xs text-gray-400">2024</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Object-Oriented Dev</h4>
+                                <span class="text-xs text-gray-400">2024</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Descomplica Faculdade Digital</p>
+                        </div>
+
+                        <!-- 2023 -->
+                        <div class="bg-white p-3 rounded border border-gray-200 hover:border-gray-400 transition-colors avoid-break">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold text-gray-800 text-sm font-mono">Santander Bootcamp</h4>
+                                <span class="text-xs text-gray-400">2023</span>
+                            </div>
+                            <p class="text-xs text-gray-500">DIO (Java + Angular)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
